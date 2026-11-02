@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <title>Sistema de Captura Autorizada</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <header>
+      <div class="eyebrow">CÂMERA • ENVIO AO TELEGRAM</div>
+      <h1>Captura autorizada</h1>
+      <p class="subtitle">Confirme a autorização para ativar a câmera e iniciar os envios.</p>
+    </header>
+
+    <section id="appPanel">
+      <div class="notice">
+        <strong>Antes de iniciar</strong>
+        <p>A câmera só será ativada depois que você marcar a confirmação e tocar em iniciar. Enquanto estiver ativa, a prévia ficará visível. As imagens serão enviadas ao Telegram configurado pelo responsável.</p>
+        <label class="consent">
+          <input id="consent" type="checkbox">
+          <span>Confirmo que a pessoa diante da câmera sabe da captura e concorda com ela.</span>
+        </label>
+      </div>
+
+      <div class="status-line">
+        <span id="statusDot" class="dot"></span>
+        <span id="status" role="status" aria-live="polite">Câmera desligada</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>Fotos enviadas</span><strong id="count">0</strong></div>
+        <div class="stat"><span>Tempo ativo</span><strong id="uptime">00:00</strong></div>
+      </div>
+
+      <label for="interval">Intervalo entre capturas</label>
+      <select id="interval">
+        <option value="5000">5 segundos</option>
+        <option value="10000" selected>10 segundos</option>
+        <option value="30000">30 segundos</option>
+      </select>
+
+      <video id="video" autoplay playsinline muted hidden></video>
+
+      <div class="controls">
+        <button class="primary" id="startBtn" type="button">Iniciar câmera</button>
+        <button class="danger" id="stopBtn" type="button" disabled>Parar</button>
+      </div>
+
+      <p id="lastCapture" class="last">Último envio: --</p>
+    </section>
+
+    <p id="message" class="message" role="alert" aria-live="polite"></p>
+    <footer>Não use este sistema para fotografar alguém sem conhecimento e consentimento.</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "img-vercel",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Captura de imagem autorizada com envio ao Telegram, preparada para Vercel.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "multer": "^2.5.0"
+  }
+}
